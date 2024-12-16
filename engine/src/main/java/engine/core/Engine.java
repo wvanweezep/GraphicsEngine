@@ -17,7 +17,7 @@ public class Engine {
 
     private void init() {
         if (!glfwInit()) { throw new IllegalStateException("Failed to initialize GLFW"); }
-        window = new Window(800, 600, "Engine");
+        window = new Window(1920, 1080, "Engine");
         window.activate();
     }
 
@@ -27,7 +27,9 @@ public class Engine {
 
         while (!glfwWindowShouldClose(window.getWindow())) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
             //TODO: Render here...
+
             glfwSwapBuffers(window.getWindow());
             glfwPollEvents();
         }
