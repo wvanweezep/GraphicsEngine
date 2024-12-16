@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+        "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!-- https://checkstyle.sourceforge.io/checks.html -->
+<module name="Checker">
+
+    <property name="severity" value="warning"/>
+    <module name="FileLength">
+        <property name="fileExtensions" value="java"/>
+        <property name="max" value="600"/>
+    </module>
+
+    <module name="TreeWalker">
+        <!-- IMPORT CONVENTIONS -->
+        <module name="UnusedImports">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="RedundantImport">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="AvoidStarImport"/>
+
+
+        <!-- COMPLEXITY CONVENTIONS -->
+        <module name="OuterTypeNumber">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="CyclomaticComplexity">
+            <property name="switchBlockAsSingleDecisionPoint" value="true"/>
+            <property name="max" value="6"/>
+            <property name="tokens" value="LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, LITERAL_IF, LITERAL_SWITCH, LITERAL_CASE, QUESTION"/>
+        </module>
+        <module name="MethodLength">
+            <property name="tokens" value="METHOD_DEF"/>
+            <property name="max" value="40"/>
+            <property name="countEmpty" value="false"/>
+        </module>
+        <module name="MethodLength">
+            <property name="tokens" value="CTOR_DEF"/>
+            <property name="max" value="25"/>
+            <property name="countEmpty" value="false"/>
+        </module>
+        <module name="ParameterNumber">
+            <property name="tokens" value="METHOD_DEF, CTOR_DEF"/>
+            <property name="max" value="6"/>
+        </module>
+        <module name="RecordComponentNumber">
+            <property name="max" value="6"/>
+        </module>
+        <module name="LambdaBodyLength">
+            <property name="max" value="8"/>
+        </module>
+
+
+        <!-- NAMING CONVENTIONS -->
+        <module name="OuterTypeFilename">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="MemberName"/>
+        <module name="MethodName"/>
+        <module name="ParameterName"/>
+        <module name="LocalVariableName"/>
+        <module name="StaticVariableName"/>
+        <module name="LambdaParameterName"/>
+        <module name="TypeName"/>
+        <module name="ConstantName"/>
+        <module name="ClassTypeParameterName"/>
+
+
+        <!-- JAVADOC CONVENTIONS -->
+        <module name="MissingJavadocMethod">
+            <property name="allowMissingPropertyJavadoc" value="true"/>
+            <property name="ignoreMethodNamesRegex" value="^Main$"/>
+            <property name="tokens" value="METHOD_DEF, ANNOTATION_FIELD_DEF"/>
+        </module>
+        <module name="JavadocMethod">
+            <property name="allowMissingParamTags" value="false"/>
+            <property name="allowMissingReturnTag" value="false"/>
+        </module>
+        <module name="InvalidJavadocPosition"/>
+
+
+        <!-- CODING CONVENTIONS -->
+        <module name="EqualsHashCode">
+            <property name="severity" value="error"/>
+        </module>
+        <module name="DeclarationOrder"/>
+        <module name="NestedForDepth"/>
+        <module name="UnusedLocalVariable"/>
+    </module>
+
+    <module name="LineLength">
+        <property name="fileExtensions" value="java"/>
+        <property name="max" value="100"/>
+        <property name="ignorePattern" value="^package.*|^import.*|http://|https://"/>
+    </module>
+</module>
