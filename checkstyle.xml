@@ -71,7 +71,7 @@
         <!-- JAVADOC CONVENTIONS -->
         <module name="MissingJavadocMethod">
             <property name="allowMissingPropertyJavadoc" value="true"/>
-            <property name="ignoreMethodNamesRegex" value="^Main$"/>
+            <property name="ignoreMethodNamesRegex" value="^main$"/>
             <property name="tokens" value="METHOD_DEF, ANNOTATION_FIELD_DEF"/>
         </module>
         <module name="JavadocMethod">
