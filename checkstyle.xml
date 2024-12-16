@@ -20,7 +20,6 @@
         <module name="RedundantImport">
             <property name="severity" value="error"/>
         </module>
-        <module name="AvoidStarImport"/>
 
 
         <!-- COMPLEXITY CONVENTIONS -->
